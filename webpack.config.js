@@ -16,10 +16,18 @@ module.exports = {
       loader: 'babel-loader',
       exclude: '/node_modules'
     }, {
-      test: /\.css$/,
+      test: /\.scss$/,
       use:  [
+        'style-loader',
         MiniCssExtractPlugin.loader,
-        "css-loader"
+        {
+          'css-loader',
+          options: { sourceMap: true}
+        },{
+          'sass-loader',
+          options: { sourceMap: true}
+        }
+
       ]
     }]
   },
