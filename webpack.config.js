@@ -21,13 +21,19 @@ module.exports = {
         'style-loader',
         MiniCssExtractPlugin.loader,
         {
-          'css-loader',
-          options: { sourceMap: true}
+          loader: 'css-loader',
+          options: { sourseMap: true }
         },{
-          'sass-loader',
-          options: { sourceMap: true}
+          loader: 'sass-loader',
+          options: { sourseMap: true }
         }
 
+      ]
+    }, {
+      test:/\.css$/,
+      use:[
+        MiniCssExtractPlugin.loader,
+        "css-loader"
       ]
     }]
   },
